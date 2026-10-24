@@ -1,0 +1,59 @@
+name: quality_sweets
+description: "Quality Sweets counter billing app — local-first, for Android and iOS."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  archive: ^4.0.7
+  file_picker: ^13.2.0
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  image_picker: ^1.2.4
+  intl: ^0.20.3
+  path_provider: ^2.1.6
+  pdf: ^3.13.1
+  printing: ^5.15.1
+  provider: ^6.1.5+1
+  share_plus: ^13.3.1
+  url_launcher: ^6.3.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/icon/app_icon.png
+  remove_alpha_ios: true
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: assets/icon/app_icon_foreground.png
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/fonts/NotoSans-Regular.ttf
+    - assets/fonts/NotoSans-Bold.ttf
+    - assets/fonts/NotoSansTamil.ttf
+    - assets/products/
+    - assets/brand/
+  fonts:
+    - family: NotoSans
+      fonts:
+        - asset: assets/fonts/NotoSans-Regular.ttf
+        - asset: assets/fonts/NotoSans-Bold.ttf
+          weight: 700
+    - family: Playfair
+      fonts:
+        - asset: assets/fonts/PlayfairDisplay-Bold.ttf
+          weight: 700
+    - family: NotoSansTamilInvoice
+      fonts:
+        - asset: assets/fonts/NotoSansTamil.ttf

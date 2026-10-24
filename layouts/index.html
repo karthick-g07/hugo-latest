@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payroll file diff</title>
+</head>
+<body>
+  <main>
+    <h1>Changes from payroll-before.md to payroll-after.md</h1>
+    <p>Edit <code>content/payroll-before.md</code> and save. Hugo reprints this diff against <code>content/payroll-after.md</code>.</p>
+    {{ $before := os.ReadFile "content/payroll-before.md" }}
+    {{ $after := os.ReadFile "content/payroll-after.md" }}
+    {{ $diff := strings.Diff "payroll-before.md" $before "payroll-after.md" $after }}
+    {{ with transform.Highlight $diff "diff" }}
+      <pre>{{ . | safeHTML }}</pre>
+    {{ else }}
+      <p>No changes. The two files match.</p>
+    {{ end }}
+  </main>
+</body>
+</html>
